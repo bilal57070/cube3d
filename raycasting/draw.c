@@ -6,7 +6,7 @@
 /*   By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:26:05 by bsafi             #+#    #+#             */
-/*   Updated: 2024/06/24 18:37:03 by bsafi            ###   ########.fr       */
+/*   Updated: 2024/06/24 19:39:42 by bsafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	draw(t_map	*map)
 {
-	if (map->stru.side == 0 && map->stru.stepX == 1)
-		drawnorth(map);
 	if (map->stru.side == 0 && map->stru.stepX == -1)
+		drawnorth(map);
+	if (map->stru.side == 0 && map->stru.stepX == 1)
 		drawsouth(map);
 	if (map->stru.side == 1 && map->stru.stepY == 1)
 		drawest(map);

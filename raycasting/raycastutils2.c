@@ -6,7 +6,7 @@
 /*   By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:32:18 by bsafi             #+#    #+#             */
-/*   Updated: 2024/06/24 18:31:51 by bsafi            ###   ########.fr       */
+/*   Updated: 2024/06/24 19:40:10 by bsafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	findpos2(t_map *map, int i, int j)
 {
 	if (map->map[i][j] == 'N')
 	{
-		map->stru.pX = i;
-		map->stru.pY = j;
+		map->stru.pX = i + 0.5;
+		map->stru.pY = j + 0.5;
 		map->stru.dX = -1;
 		map->stru.dY = 0;
 		map->stru.planeX = 0;
@@ -58,8 +58,8 @@ void	findpos2(t_map *map, int i, int j)
 	}
 	if (map->map[i][j] == 'S')
 	{
-		map->stru.pX = i;
-		map->stru.pY = j;
+		map->stru.pX = i + 0.5;
+		map->stru.pY = j + 0.5;
 		map->stru.dX = 1;
 		map->stru.dY = 0;
 		map->stru.planeX = 0;
@@ -72,8 +72,8 @@ void	findpos3(t_map *map, int i, int j)
 {
 	if (map->map[i][j] == 'W')
 	{
-		map->stru.pX = i;
-		map->stru.pY = j;
+		map->stru.pX = i + 0.5;
+		map->stru.pY = j + 0.5;
 		map->stru.dX = 0;
 		map->stru.dY = -1;
 		map->stru.planeX = -0.66;
@@ -81,8 +81,8 @@ void	findpos3(t_map *map, int i, int j)
 	}
 	if (map->map[i][j] == 'E')
 	{
-		map->stru.pX = i;
-		map->stru.pY = j;
+		map->stru.pX = i + 0.5;
+		map->stru.pY = j + 0.5;
 		map->stru.dX = 0;
 		map->stru.dY = 1;
 		map->stru.planeX = 0.66;
