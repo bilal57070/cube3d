@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouv2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: bsafi <bsafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:29:21 by bsafi             #+#    #+#             */
-/*   Updated: 2024/06/24 17:59:32 by bsafi            ###   ########.fr       */
+/*   Updated: 2024/06/28 16:41:28 by bsafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,20 @@ int	key_release(int keycode, t_map *map)
 	return (0);
 }
 
-int	ft_exit2(void)
+int	ft_exit2(t_map *map)
 {
+	mlx_destroy_image(map->mlx, map->NO->img);
+	mlx_destroy_image(map->mlx, map->SO->img);
+	mlx_destroy_image(map->mlx, map->W->img);
+	mlx_destroy_image(map->mlx, map->E->img);
+	mlx_destroy_image(map->mlx, map->img->img);
+	free(map->img);
+	free(map->NO);
+	free(map->SO);
+	free(map->W);
+	free(map->E);
+	free(map->mlx);
+	free_all(map);
 	exit(0);
 	return (0);
 }

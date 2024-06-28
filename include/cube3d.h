@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: bsafi <bsafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 14:31:10 by isouaidi          #+#    #+#             */
-/*   Updated: 2024/06/24 18:32:07 by bsafi            ###   ########.fr       */
+/*   Updated: 2024/06/28 17:03:50 by bsafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ void	check_name_cube(char *av);
 int		tablen(char **tab);
 void	inti_var(t_map *map);
 void	print_char_tab(char **tab);
-void	check_texture(t_map *map);
+void	check_texture(t_map *map, int i);
 void	ft_exit(char *str);
 void	check_colors(t_map *map, int i, int j);
 char	*without_space(char *s);
@@ -160,7 +160,7 @@ void	free_all(t_map *map);
 void	free_tab(char **tab);
 char	*free_strjoins2(char *s1, char *s2);
 char	*free_strjoins1(char *s1, char *s2);
-char	*textmap(char **tab, char a, char b);
+char	*textmap(char **tab, char a, char b, int i);
 void	rctext(t_map *map);
 
 
@@ -172,7 +172,7 @@ void	raycasting(t_map *map);
 void 	draw_line(t_map *map, int x0, int y0, int x1, int y1, int color);
 int		choose_color(t_img *img, int x, int y);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
-int		ft_exit2(void);
+int		ft_exit2(t_map *map);
 int		key_press(int keycode, t_map *map);
 int		move(t_map *map);
 void	movefront(t_map *map);
@@ -198,5 +198,6 @@ void	todraw(t_map *map);
 void	dda(t_map *map);
 void	rayinit(t_map *map);
 void	raydist(t_map *map);
+void	initimg2(t_map *map);
 
 #endif

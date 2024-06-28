@@ -3,24 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   recup_text2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: bsafi <bsafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 13:21:11 by isouaidi          #+#    #+#             */
-/*   Updated: 2024/06/24 13:26:59 by bsafi            ###   ########.fr       */
+/*   Updated: 2024/06/28 17:01:54 by bsafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube3d.h"
 
-char	*textmap(char **tab, char a, char b)
+char	*textmap(char **tab, char a, char b, int i)
 {
-	int		i;
 	int		j;
 	int		c;
 	char	*str;
 
-	i = 0;
-	while (tab[i])
+	while (tab[++i])
 	{
 		if (tab[i][0] == a && tab[i][1] == b)
 		{
@@ -30,19 +28,23 @@ char	*textmap(char **tab, char a, char b)
 				j++;
 			str = malloc(sizeof(char) * (ft_strlen(tab[i]) - j + 1));
 			while (tab[i][j])
-				str[c++] = tab[i][j++];
+			{
+				if (tab[i][j] == ' ')
+					j++;
+				else 
+					str[c++] = tab[i][j++];
+			}
 			str[c] = '\0';
 			return (str);
 		}
-		i++;
 	}
 	return (NULL);
 }
 
 void	rctext(t_map *map)
 {
-	map->_no = textmap(map->text, 'N', 'O');
-	map->_ea = textmap(map->text, 'E', 'A');
-	map->_so = textmap(map->text, 'S', 'O');
-	map->_we = textmap(map->text, 'W', 'E');
+	map->_no = textmap(map->text, 'N', 'O', -1);
+	map->_ea = textmap(map->text, 'E', 'A', -1);
+	map->_so = textmap(map->text, 'S', 'O', -1);
+	map->_we = textmap(map->text, 'W', 'E', -1);
 }

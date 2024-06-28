@@ -22,7 +22,7 @@ SRCS =  main.c\
 OBJS = $(SRCS:.c=.o)
 NAME = cub3D
 CC = gcc
-CFLAGS = -Wall -Wextra  -Werror -I$(MLX_DIR) -Iinclude -lm #-fsanitize=address
+CFLAGS = -Wall -Wextra  -Werror -I$(MLX_DIR) -Iinclude -lm -g #-fsanitize=address
 MINILIBX_DIR = ./minilibx-linux/
 MINILIBX_LIB = $(MINILIBX_DIR)/libmlx_Linux.a
 RM = rm -rf

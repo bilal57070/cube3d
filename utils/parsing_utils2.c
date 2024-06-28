@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+        */
+/*   By: bsafi <bsafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 18:53:33 by isouaidi          #+#    #+#             */
-/*   Updated: 2024/06/20 17:11:18 by bsafi            ###   ########.fr       */
+/*   Updated: 2024/06/28 15:28:19 by bsafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	apl_pars(t_map *map, char **av)
 	check_name_cube(av[1]);
 	size_fd(map, av[1]);
 	recup(map, av[1]);
-	check_texture(map);
+	check_texture(map, 0);
 	check_colors(map, 0, 0);
 	tab_col(map, 0, 0);
 	recup_map(map, 0, 0, 0);
